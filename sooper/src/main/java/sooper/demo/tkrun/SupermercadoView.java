@@ -68,10 +68,20 @@ public class SupermercadoView {
 		
 		JButton btnAniadirPedido = new JButton("Añadir Pedido");
 		btnAniadirPedido.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				controller.AniadirArticulosPedido(Integer.parseInt(textField.getText()));
+			public void actionPerformed(ActionEvent e) { //Se ejecuta cuando ocurre una accion
 				
+				controller.AniadirArticulosPedido(Integer.parseInt(textField.getText()));
 			}
+			
+	
+			// añado 02-04-25
+			public DefaultTableModel getModelArticulo() {
+				return this.modeloArticulo;					
+			}
+			public DefalutTableModel getModeloslistaEmbolsado() {
+				return this.modeloArticulo;
+			}
+			
 		});
 		
 		frmSupermercado.getContentPane().add(btnAniadirPedido, "cell 0 1");
@@ -81,6 +91,7 @@ public class SupermercadoView {
 		
 		table = new JTable();
 		table.setModel(modeloArticulo);
+		
 		table.getColumnModel().getColumn(2).setPreferredWidth(149);
 		scrollPane.setViewportView(table);
 
@@ -123,6 +134,18 @@ public void rellenaListaArticulos(Object[] rowArticulo) {
 		this.modeloArticulo.addRow(rowArticulo);//para añadir una fila a la tabla lo primero que tengo que añadir es la 
 												//fila al modelo correspondiente a esa tabla
 		this.table.setModel(modeloArticulo); //una vez la tenga añadida al modelo, muestro el modelo en la tabla
-		
+}
+public JTable getTable() {
+	return this.table;
 	}
+
+public JTable getModeloListaEmbolsados() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public Object getModelArticulo() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

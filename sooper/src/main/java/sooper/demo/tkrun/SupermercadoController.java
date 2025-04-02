@@ -1,13 +1,16 @@
 package sooper.demo.tkrun;
 
 import java.util.List;
+import java.util.Objects;
 
 
 
 public class SupermercadoController {
 
+	private static final String Interger = null;
 	private SupermercadoModel model;
 	private SupermercadoView view;
+	private Object parseidArticulo;
 	
 		
 	public void setVistaModel( SupermercadoView v , SupermercadoModel m) {
@@ -52,7 +55,27 @@ public class SupermercadoController {
 		// TODO Auto-generated method stub
 		model.embolsaArticulo();
 		
+		String idArticulo;		// get coger  // set poner
+		
+		idArticulo = this.view.getTable().getValueAt(this.view.getTable().getSelectedRow(),0).toString(); // Este valor es variable, inidcar la fila deseada
+		
+		this.model.mbolsarArticulo(Integer.parseInt(idArticulo));
+		
+		//añado desde aquí 02-04-25
+		this.view.getModelArticulo().removeRow(this.view.getTable().getSelectedRow()); //con esto se elimina la fila
+		
+		Objects[] fila = null;
+		
+		this.view.getModeloListaEmbolsados().setValueAt(fila, 0, 0); //aquí añado fila
+		//para sacar el numero de fila
+		
+		
+		int numeroFila = this.view.getModeloListaEmbolsados().getRowCount();
+		
+		//String componente = view.getTable().getValueAt(this.view.getTable().getSelectedRow(), 0).toString();
+		
+		this.view.getModeloListaEmbolsados().setValueAt(idArticulo, numeroFila -1, 0); // (idArticulo,numeroFila-2,0)	
+		this.view.getModeloListaEmbolsados().setValueAt("999",numeroFila -1,1);
+		
 	}
-
 }
-

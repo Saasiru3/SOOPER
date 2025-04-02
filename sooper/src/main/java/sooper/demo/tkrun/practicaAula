@@ -11,6 +11,32 @@ Guarde en el campo "embolsado" del articulo seleccionado el valor entero 1
 Muestre en la tabla de abajo el registro seleccionado, con el id de articulo correspondiente y en el campo contenedor
 muestre el valor entero 999
 
+ejecutar aplicacin añadir pedido:
+
+										supermercadoview 
+dentro del controlador embolsrArticulos
+
+publick DefalultTableModel getModelArticulo(){
+retunt this.modelArticulo
+
+public defaultTableModel getModeloListaEmbolsados() {
+return this.
+
+
+									supermercado controller
+
+this.view.etModel Articulo(). removeRow(this.view.getTable().getselectedRow()); // con esto eliminariamos la fila
+Object[] fila = null;
+this.view.getModeloEmbolsados(). addRow(fila)  //añadir fia
+//para sacar el numero de fila
+this.view.getModeloListaEmbolsados().setValueAt(fila, 0, 0);
+
+									supermercado model
+
+
+
+
+
 2. Modifica la base de datos para que:
 	a. en la tabla articuloPedido se almacene información acerca del contenedor asignado a ese articulo
 	b. en la tabla contenedor, se almacene información acerca de la capacidad libre de ese contenedor (tendrá un valor 
@@ -19,3 +45,6 @@ muestre el valor entero 999
 3. Modifica la funcionalidad que has creado en el punto 1 para que:
 	a. Al embolsar un articulo, seleccione el contenedor que tenga espacio libre suficiente para albergar ese articulo
 	b. Se modifique el espacio libre de ese contenedor para añadir el volumen que ocupa ese articulo
+
+	
+	

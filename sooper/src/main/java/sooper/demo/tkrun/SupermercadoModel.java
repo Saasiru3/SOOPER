@@ -8,6 +8,7 @@ import sooper.demo.util.Database;
 public class SupermercadoModel {
 	
 	Database db = new Database();
+	private Object idArticulo;
 
 	public List<Object[]> AniadirArticulosPedido(int i) {
 		// TODO Auto-generated method stub
@@ -29,6 +30,26 @@ public class SupermercadoModel {
 		lista = new ArrayList<Object[]>();
 		
 		lista = db.executeQueryArray("SELECT * FROM ARTICULOPEDIDO WHERE IDPEDIDO = ?", 1);
+	//kdjjf
+		
+		
+		//String sql = "UPDATE     //ariticuloPedido     SET  //embolsado   =     WERE idArticulo  = //?  "
+		String sql = "UPDATE articuloPedido SET embolsado = WERE idArticulo = ?";
+		// Que quiero pasar
+		
+		
+		db.executeUpdate(sql, 1, idArticulo);
+	
+	}
+
+	public void embolsarArticulo(String interger, Object parseidArticulo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mbolsarArticulo(int int1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
